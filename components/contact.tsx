@@ -113,7 +113,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Email</p>
-                  <p className="text-white font-medium">hello@designer.com</p>
+                  <p className="text-white font-medium">manalojenelyn02@designer.com</p>
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Phone</p>
-                  <p className="text-white font-medium">+1 (555) 123-4567</p>
+                  <p className="text-white font-medium">63+ 9456358029</p>
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Location</p>
-                  <p className="text-white font-medium">San Francisco, CA</p>
+                  <p className="text-white font-medium">Quezon City Manila, Philippines</p>
                 </div>
               </div>
             </div>
