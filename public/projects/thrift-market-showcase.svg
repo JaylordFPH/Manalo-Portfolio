@@ -1,0 +1,21 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#F0ECE7"/>
+  <rect x="72" y="72" width="1056" height="756" rx="36" fill="#16302B"/>
+  <rect x="128" y="122" width="448" height="656" rx="34" fill="#E0E0E0"/>
+  <rect x="176" y="172" width="352" height="210" rx="28" fill="#390517"/>
+  <rect x="208" y="210" width="132" height="20" rx="10" fill="#A38560"/>
+  <rect x="208" y="252" width="210" height="56" rx="18" fill="#E0E0E0"/>
+  <rect x="208" y="332" width="136" height="18" rx="9" fill="#E0E0E0" fill-opacity="0.7"/>
+  <rect x="176" y="426" width="144" height="180" rx="24" fill="#EAD7C3"/>
+  <rect x="352" y="426" width="144" height="180" rx="24" fill="#D1B8A1"/>
+  <rect x="176" y="640" width="94" height="16" rx="8" fill="#16302B"/>
+  <rect x="352" y="640" width="94" height="16" rx="8" fill="#16302B"/>
+  <rect x="644" y="144" width="408" height="120" rx="32" fill="#390517"/>
+  <rect x="684" y="184" width="112" height="16" rx="8" fill="#A38560"/>
+  <rect x="684" y="214" width="228" height="24" rx="12" fill="#E0E0E0"/>
+  <rect x="644" y="304" width="188" height="220" rx="28" fill="#E0E0E0"/>
+  <rect x="864" y="304" width="188" height="220" rx="28" fill="#E0E0E0"/>
+  <rect x="644" y="556" width="408" height="170" rx="30" fill="#A38560"/>
+  <text x="692" y="662" fill="#390517" font-family="Arial, sans-serif" font-size="34" font-weight="700">THRIFT</text>
+  <text x="692" y="702" fill="#390517" font-family="Arial, sans-serif" font-size="20">curated mobile marketplace</text>
+</svg>

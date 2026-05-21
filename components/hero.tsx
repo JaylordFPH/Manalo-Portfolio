@@ -1,91 +1,113 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { Download, ChevronDown } from "lucide-react";
-import Image from "next/image";
-import { ThemeToggle } from "./theme-toggle";
-import Link from "next/link";
+import Link from "next/link"
+import { ArrowUpRight, Download } from "lucide-react"
+import { motion } from "motion/react"
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 32 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay },
+})
 
 export function Hero() {
-  const handleViewProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-      <div className="absolute top-6 right-6 z-20">
-        <ThemeToggle />
+    <section
+      id="home"
+      className="mn-scene-section justify-center"
+      style={{ paddingTop: "9rem" }}
+    >
+      <div className="mx-auto w-full max-w-6xl">
+        {/* Availability badge */}
+        <motion.div {...fadeUp(0)} className="mb-8 flex items-center gap-2.5">
+          <span className="mn-dot-live" style={{ backgroundColor: "#6ec6a0" }} />
+          <span className="mn-glass-label">Available for opportunities</span>
+        </motion.div>
+
+        {/* Main headline — raw text on 3D, no glass card */}
+        <motion.h1
+          {...fadeUp(0.08)}
+          className="max-w-[42rem] text-[clamp(2.8rem,7vw,5.5rem)] font-semibold leading-[0.93] tracking-[-0.055em] mn-glass-title"
+        >
+          <span className="block">Designing</span>
+          <span className="block">polished digital</span>
+          <span className="block" style={{ color: "#7dcba8" }}>
+            experiences
+          </span>
+          <span className="block">with intent.</span>
+        </motion.h1>
+
+        {/* Divider */}
+        <motion.div
+          {...fadeUp(0.16)}
+          className="my-8 max-w-[5rem] border-t border-[rgba(125,203,168,0.3)]"
+        />
+
+        {/* Description */}
+        <motion.p
+          {...fadeUp(0.2)}
+          className="max-w-[30rem] text-[0.95rem] leading-[1.78] mn-glass-body"
+        >
+          I shape digital experiences that feel welcoming from first impression
+          to final interaction — blending clarity, responsive thinking, and
+          practical problem solving.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          {...fadeUp(0.26)}
+          className="mt-9 flex flex-wrap items-center gap-3"
+        >
+          <Link
+            href="/pdf/Manalo-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#3d7a62] px-6 py-2.5 text-[0.8rem] font-semibold text-white transition-all duration-200 hover:bg-[#2f6250] hover:shadow-[0_6px_24px_rgba(61,122,98,0.5)] hover:-translate-y-[1px]"
+          >
+            <Download className="h-3.5 w-3.5" />
+            Download CV
+          </Link>
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 rounded-full border border-[rgba(125,203,168,0.32)] px-6 py-2.5 text-[0.8rem] font-medium mn-glass-title transition-all duration-200 hover:border-[rgba(125,203,168,0.65)] hover:bg-[rgba(61,122,98,0.18)] hover:-translate-y-[1px]"
+          >
+            View Projects
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          {...fadeUp(0.33)}
+          className="mt-14 flex items-center gap-10 mn-glass-edge pt-7"
+        >
+          {[
+            { value: "5+", label: "Projects" },
+            { value: "8+", label: "Tools" },
+            { value: "2025", label: "Cohort" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="text-[1.95rem] font-bold leading-none tracking-[-0.06em] mn-glass-title">
+                {s.value}
+              </p>
+              <p className="mt-1.5 mn-glass-label">{s.label}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00010D] via-[#010326] to-[#2D0140] dark:from-[#00010D] dark:via-[#010326] dark:to-[#2D0140] light:from-slate-50 light:via-slate-100 light:to-slate-200">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-20 w-2 h-2 bg-white dark:bg-white light:bg-[#A305A6] rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-32 w-1 h-1 bg-[#A305A6] rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-[#660273] rounded-full animate-pulse delay-500"></div>
-          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-white dark:bg-white light:bg-[#660273] rounded-full animate-pulse delay-700"></div>
-          <div className="absolute bottom-20 right-20 w-2 h-2 bg-[#A305A6] rounded-full animate-pulse delay-300"></div>
-        </div>
-      </div>
-
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Profile Image */}
-        <div className="mb-8 relative">
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-[#A305A6] shadow-2xl shadow-[#A305A6]/20">
-            <Image
-              src="/image/profile.png"
-              alt="UI/UX Designer Profile"
-              width={160}
-              height={160}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#660273] to-[#A305A6] opacity-20 blur-xl"></div>
-        </div>
-
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-[#A305A6] to-[#660273] bg-clip-text text-transparent leading-tight">
-          UI/UX Designer
-        </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Crafting designs that connect people and technology.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex fles-col justify-center items-center">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link
-              href="/pdf/Manalo-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-[#660273] to-[#A305A6] hover:from-[#A305A6] hover:to-[#660273] text-white border-0 px-8 py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
-              </Button>
-            </Link>
-
-            <Button
-              onClick={handleViewProjects}
-              variant="outline"
-              size="lg"
-              className="border-[#A305A6] text-[#A305A6] hover:bg-[#A305A6] hover:text-white px-8 py-3 text-lg font-semibold transition-all duration-300 bg-transparent"
-            >
-              View Projects
-            </Button>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="h-6 w-6 text-[#A305A6]" />
-          </div>
-        </div>
-      </div>
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.9 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <div className="h-12 w-px animate-bounce bg-gradient-to-b from-[rgba(125,203,168,0.6)] to-transparent" />
+        <span className="mn-glass-label" style={{ fontSize: "0.55rem" }}>
+          Scroll
+        </span>
+      </motion.div>
     </section>
-  );
+  )
 }
