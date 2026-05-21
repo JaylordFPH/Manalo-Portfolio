@@ -22,7 +22,6 @@ function ContactForm({ inView }: { inView: boolean }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" })
   const [errors, setErrors] = useState<FormErrors>({})
   const [state, setState] = useState<FormState>("idle")
-  const [focused, setFocused] = useState<string | null>(null)
 
   const validate = useCallback((): boolean => {
     const e: FormErrors = {}
@@ -88,8 +87,6 @@ function ContactForm({ inView }: { inView: boolean }) {
             placeholder="Your name"
             value={form.name}
             onChange={(e) => onChange("name", e.target.value)}
-            onFocus={() => setFocused("name")}
-            onBlur={() => setFocused(null)}
             className={`${inputBase} ${errors.name ? inputError : inputIdle}`}
           />
           <AnimatePresence>
@@ -112,8 +109,6 @@ function ContactForm({ inView }: { inView: boolean }) {
             placeholder="your@email.com"
             value={form.email}
             onChange={(e) => onChange("email", e.target.value)}
-            onFocus={() => setFocused("email")}
-            onBlur={() => setFocused(null)}
             className={`${inputBase} ${errors.email ? inputError : inputIdle}`}
           />
           <AnimatePresence>
@@ -137,8 +132,6 @@ function ContactForm({ inView }: { inView: boolean }) {
           placeholder="Tell me about your project..."
           value={form.message}
           onChange={(e) => onChange("message", e.target.value)}
-          onFocus={() => setFocused("message")}
-          onBlur={() => setFocused(null)}
           className={`${inputBase} resize-none ${errors.message ? inputError : inputIdle}`}
         />
         <div className="mt-1 flex items-center justify-between">

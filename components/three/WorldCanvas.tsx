@@ -192,7 +192,10 @@ export function WorldCanvas() {
       cancelAnimationFrame(raf)
       scene.traverse(o => {
         const m = o as THREE.Mesh; if (m.geometry) m.geometry.dispose()
-        if (m.material) Array.isArray(m.material) ? m.material.forEach(x=>x.dispose()) : m.material.dispose()
+        if (m.material) {
+          if (Array.isArray(m.material)) m.material.forEach(x => x.dispose())
+          else m.material.dispose()
+        }
       })
       renderer.dispose()
       if (el.contains(renderer.domElement)) el.removeChild(renderer.domElement)

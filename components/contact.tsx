@@ -15,11 +15,11 @@ export function Contact() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#A305A6] to-[#660273] bg-clip-text text-transparent">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#660273] to-[#A305A6] mx-auto rounded-full"></div>
           <p className="text-lg text-gray-300 mt-6 max-w-2xl mx-auto">
-            Ready to bring your digital vision to life? Let's discuss your
+            Ready to bring your digital vision to life? Let&apos;s discuss your
             project and create something amazing together.
           </p>
         </div>
@@ -99,7 +99,7 @@ export function Contact() {
                 Get in Touch
               </h3>
               <p className="text-gray-300 leading-relaxed mb-8">
-                I'm always excited to work on new projects and collaborate with
+                I&apos;m always excited to work on new projects and collaborate with
                 amazing people. Whether you have a specific project in mind or
                 just want to chat about design, feel free to reach out!
               </p>
